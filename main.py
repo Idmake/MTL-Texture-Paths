@@ -1,10 +1,12 @@
 import tkinter.filedialog
 
 open_types = (["MTL File", "*.mtl"], ["All Files", "*.*"])
-mtl_file_path = tkinter.filedialog.askopenfilename(filetypes=open_types)
+open_title = "Select a .mtl File"
+mtl_file_path = tkinter.filedialog.askopenfilename(filetypes=open_types, title=open_title)
 
 save_types = [("MTL File", "*.mtl"), ("Any File", "*.*")]
-new_file_path = tkinter.filedialog.asksaveasfilename(filetypes=save_types, defaultextension=save_types)
+save_title = "Save as a new .mtl file"
+new_file_path = tkinter.filedialog.asksaveasfilename(filetypes=save_types, defaultextension=save_types, title=save_title)
 
 if mtl_file_path == "" or new_file_path == "":
     quit()
