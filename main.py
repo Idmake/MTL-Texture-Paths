@@ -22,14 +22,22 @@ with open(file=mtl_file_path, mode="r") as mtl_file:
 for line in old_lines:
     if line.find("map_Kd") != -1 or line.find("map_d") != -1:
 
-        # don't get the full path, only the file name
-        path_parts = line.split(sep="/")
+        # don't get the full path, get the last path
+        path_parts = line.split(sep=" ")
         filename_part = path_parts[len(path_parts) - 1]
 
+        # don't get any folder behind that
+        path_parts = filename_part.split(sep="/")
+        filename_part = path_parts[len(path_parts) - 1]
+
+        print("filename: " + filename_part)
 
         # get map_Kd or map_d
-        map_part = line.split()[0]
+        map_part = line.split(sep=" ")[0]
         new_lines.append(map_part + " " + filename_part + "\n")
+
+        print("map part: " + map_part)
+
     else:
         new_lines.append(line + "\n")
 
