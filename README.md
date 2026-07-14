@@ -4,5 +4,5 @@ Useful when you want to store the .mtl file in the same diretory as the texture 
 _May support creating own child folders in the future._
 
 # How to use
-- Selet your current .mtl file
+- Select your current .mtl file
 - Select where to save the new .mtl file
